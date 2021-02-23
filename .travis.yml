@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "10.15"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+  - master
+
+before_script:
+  - export NG_CLI_ANALYTICS=ci
+  - npm install -g angular-cli-ghpages
+  - npm install -g @angular/cli
+  - ng analytics off
+  - npm install
+
+script:
+  - cd polen-front
+  - npm install
+  - npm run lint
+  - echo "***** START ANGULAR APPLICATION"
+  - npm start &
+  - sleep 120
+  - echo "***** CURL to home url"
+  - curl -s http://localhost:4200
+  - npm run build
+  - ngh --dir=dist/polen --message="deploy by Travis-ci" --repo=https://$GITHUB_TOKEN@github.com/sgrillon14/polen.io.git --branch=master
