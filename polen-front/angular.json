@@ -29,9 +29,7 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
-              "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
-              "./node_modules/leaflet/dist/leaflet.css",
-              "./node_modules/leaflet.coordinates/dist/Leaflet.Coordinates-0.1.5.css"
+              "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

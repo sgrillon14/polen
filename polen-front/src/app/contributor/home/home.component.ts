@@ -2,8 +2,6 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EventService } from 'src/app/shared/services/event/event.service';
 import { Router } from '@angular/router';
-import '../../../../node_modules/leaflet.browser.print/dist/leaflet.browser.print.min.js';
-import '../../../../node_modules/leaflet.coordinates/dist/Leaflet.Coordinates-0.1.5.src.js';
 import { Event } from 'src/app/model/event.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventFormComponent } from '../event-form/event-form.component';
