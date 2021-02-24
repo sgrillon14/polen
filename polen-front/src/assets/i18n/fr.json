@@ -1,0 +1,130 @@
+{
+  "LOGIN": {
+    "TITLE": "Se connecter",
+    "LOGIN": "Identifiant",
+    "PASSWORD": "Mot de passe",
+    "SUBMIT": "Se connecter",
+    "FORGOT_PASSWORD": "Mot de passe oublié ?",
+    "USER_NOT_FOUND": "Identifiant ou mot de passe incorrect.",
+    "USER_NOT_CONFORM_POLICY": "Identifiant incorrect.",
+    "FORCE_CHANGE_PASSWORD": "Vous devez changer votre mot de passe.",
+    "PASSWORD_NOT_CONFORM_POLICY": "Format du mot de passe incorrect",
+    "404": "Erreur de connexion aux webservices"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Changer de mot de passe",
+    "LOGIN": "Identifiant",
+    "OLD_PASSWORD": "Ancien mot de passe",
+    "VERIFICATION_CODE": "Code de vérification",
+    "NEW_PASSWORD": "Nouveau mot de passe",
+    "CONFIRM_PASSWORD": "Confirmation du nouveau mot de passe",
+    "SUBMIT": "Valider",
+    "USER_NOT_FOUND": "Identifiant ou mot de passe incorrect.",
+    "404": "Erreur de connexion aux webservices",
+    "RESET_PASSWORD_SENT": "Un email vous a été envoyé pour réinitialiser votre mot de passe",
+    "CONFIRM_PASSWORD_DO_NOT_MATCH_NEW_PASSWORD": "La confirmation du mot de passe doit correspondre au nouveau mot de passe saisi précédemment."
+  },
+  "MENU": {
+    "TITLE": "",
+    "CONTRIBUTOR": "Contributeur",
+    "ADMINISTRATION": "Administration",
+    "LOGOUT": "Déconnexion"
+  },
+  "ADMIN": {
+    "TITLE": "Administration",
+    "USER": {
+      "TITLE": "Liste des utilisateurs",
+      "LOGIN": "Identifiant",
+      "NAME": "Nom",
+      "FIRSTNAME": "Prénom",
+      "EMAIL": "E-mail",
+      "PROFILE": "Profil",
+      "ROLE": "Rôles",
+      "ROLES": {
+        "ADMIN": "Administrateur système",
+        "CONTRIBUTOR": "Contributeur"
+      },
+      "ENABLED": "Activé",
+      "STATUS": "Statut",
+      "STATUSES": {
+        "UNCONFIRMED": "Non-confirmé",
+        "CONFIRMED": "Confirmé",
+        "ARCHIVED": "Archivé",
+        "COMPROMISED": "compromis",
+        "RESET_REQUIRED": "Reset requise",
+        "UNKNOWN": "Inconnu",
+        "FORCE_CHANGE_PASSWORD": "Mot de passe à changer"
+      },
+      "ERROR": {
+        "CREATION_INTEGRITY_ERROR": "L'utilisateur ne peut pas être créé (Identifiant déjà utilisé).",
+        "UNKNOWN_ERROR": "Erreur inconnue."
+      },
+      "USER_FORM": {
+        "TITLE": "Création d'un utilisateur",
+        "CREATE": "Créer",
+        "EDIT": "Modifier",
+        "CANCEL": "Annuler"
+      }
+    },
+    "LOADING": "Mise à jour en cours..."
+  },
+  "404": {
+    "TITLE": "La page que vous avez demandée n'existe pas."
+  },
+  "403": {
+    "TITLE": "Vous n'êtes pas autorisé à accéder à cette page."
+  },
+  "500": {
+    "TITLE": "Une erreur est survenue.",
+    "RETRY": "Veuillez réessayer plus tard."
+  },
+  "AWS": {
+    "COGNITO": {
+      "GENERAL": "Erreur de webservices Cognito.",
+      "USER_ALREADY_EXISTS": "L'utilisateur existe déjà dans le système.",
+      "TEMPORARY_PASSWORD_HAS_BEEN_RETURNED_TO_THE_USER": "Le mot de passe temporaire a été renvoyé vers l'utilisateur."
+    }
+  },
+  "CONTRIBUTOR": {
+    "HOME": {
+      "TITLE": "Liste des cours",
+      "CREATE_EVENT_BUTTON": "Nouveau cours",
+      "EVENT_NOT_FOUND": "Aucun cours ne correspond à votre recherche.",
+      "EVENT_NOT_FOUND_TRY_AGAIN": "Essayez de nouveau avec d'autres critères de recherche.",
+      "RESULTS": {
+        "DATE": "Date",
+        "ORGANIZER": "Oraganisateur",
+        "STUDENTS": "Eleves"
+      }
+    },
+    "EVENT":{
+      "DATE": "Date",
+      "ORGANIZER": "Oraganisateur",
+      "PLACES": "Nombre de place",
+      "EVENT_FORM": {
+        "TITLE": "Création d'un évenement",
+        "CREATE": "Créer",
+        "EDIT": "Modifier",
+        "CANCEL": "Annuler"
+      }
+    }
+  },
+  "PUBLIC": {
+    "HOME": {
+      "TITLE": "Voici la liste des prochaines session",
+      "DATE": "Date",
+      "ORGANIZER": "Oraganisateur",
+      "STUDENTS": "Participants",
+      "ADMIN": "Accès pour les organisateurs"
+    },
+    "EVENT": {
+      "EVENT_FORM": {
+        "TITLE": "Inscription d'un étudiant pour cette session",
+        "NAME": "Nom et prénom",
+        "CREATE": "Créer",
+        "EDIT": "Modifier",
+        "CANCEL": "Annuler"
+      }
+    }
+  }
+}

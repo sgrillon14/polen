@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ 'PUBLIC.EVENT.EVENT_FORM.TITLE' | translate }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form id="event-edition-form" [formGroup]="formUser" (ngSubmit)="close()">
+  <div class="modal-body">
+      <div class="top user-content">
+        <div class="form-group row">
+          <label for="name-input" class="col-sm-3 col-form-label field">{{ 'PUBLIC.EVENT.EVENT_FORM.NAME' | translate }}</label>
+          <div class="col-sm-9">
+            <input id="name-input" type="text" class="form-control" formControlName="student" required>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline-primary" (click)="activeModal.dismiss()">{{ 'PUBLIC.EVENT.EVENT_FORM.CANCEL' | translate }}</button>
+    <button id="confirm-event-button" class="btn btn-primary" [disabled]="formUser.invalid" type="submit">{{ 'PUBLIC.EVENT.EVENT_FORM.CREATE' | translate }}</button>
+  </div>
+</form>

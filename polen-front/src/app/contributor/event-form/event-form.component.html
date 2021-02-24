@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ 'CONTRIBUTOR.EVENT.EVENT_FORM.TITLE' | translate }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form id="event-edition-form" [formGroup]="formEvent" (ngSubmit)="close()">
+  <div class="modal-body">
+      <div class="top user-content">
+        <div class="form-group row">
+          <label for="date-input" class="col-sm-3 col-form-label field">{{ 'CONTRIBUTOR.EVENT.DATE' | translate }}</label>
+          <div class="col-sm-9">
+            <input id="date-input" type="text" class="form-control" formControlName="date" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name-input" class="col-sm-3 col-form-label field">{{ 'CONTRIBUTOR.EVENT.ORGANIZER' | translate }}</label>
+          <div class="col-sm-9">
+            <input id="name-input" type="text" class="form-control" formControlName="organizer" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name-input" class="col-sm-3 col-form-label field">{{ 'CONTRIBUTOR.EVENT.PLACES' | translate }}</label>
+          <div class="col-sm-9">
+            <input id="name-input" type="number" class="form-control" formControlName="numberOfPlaces" required>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline-primary" (click)="activeModal.dismiss()">{{ 'CONTRIBUTOR.EVENT.EVENT_FORM.CANCEL' | translate }}</button>
+    <button id="confirm-event-button" class="btn btn-primary" [disabled]="formEvent.invalid" type="submit">{{ 'CONTRIBUTOR.EVENT.EVENT_FORM.CREATE' | translate }}</button>
+  </div>
+</form>

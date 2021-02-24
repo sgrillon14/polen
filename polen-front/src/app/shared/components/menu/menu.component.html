@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-logo-div">
+              <img class="navbar-logo-img" src="./assets/polen_logo.png" alt="polen"/>
+          </div>
+            <div class="navbar-nav mr-auto menu-title">
+                {{ 'MENU.TITLE' | translate }}
+            </div>
+            <div class="menu-drop-container">
+                <ul class="navbar-nav navbar-right menu-drop">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="account-menu" data-toggle="dropdown"><span>{{ user.firstname }}<br/>{{ user.name }}</span></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" id="contributor-menu-item" *ngIf='isContributor' routerLink="/contributor/home">{{ 'MENU.CONTRIBUTOR' | translate }}</a>
+                            <a class="dropdown-item" id="administration-menu-item" *ngIf='isAdmin' routerLink="/admin">{{ 'MENU.ADMINISTRATION' | translate }}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id="logout-menu-item" routerLink="/account/logout">{{ 'MENU.LOGOUT' | translate }}</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

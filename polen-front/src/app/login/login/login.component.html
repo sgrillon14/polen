@@ -1,0 +1,26 @@
+<div class="login-content bg">
+	<div class="container pt-5">
+		<div class="container login-sub-content">
+			<form id="formLogin" (ngSubmit)="login()" #formLogin="ngForm" novalidate>
+				<h3>
+					<div>{{ 'LOGIN.TITLE' | translate }}</div>  
+				</h3>
+				<div class="">
+					<ngb-alert *ngIf='errMsg' [dismissible]="true" type="danger" (close)="closeAlert()"><span id="login-failure-message">{{ errMsg }}</span></ngb-alert>
+					<div class="form-group">
+						<label for="username" class="field">{{ 'LOGIN.LOGIN' | translate }}</label>
+						<input class="form-control" type="text" name="username" id="username" autocomplete="OFF" #username="ngModel" required [(ngModel)]="model.username">
+					</div>
+					<div class="form-group">	
+						<label for="password" class="field">{{ 'LOGIN.PASSWORD' | translate }}</label>
+						<input class="form-control" id="password" name="password" type="password" #password="ngModel" required [(ngModel)]="model.password">
+					</div>
+					<button  class="btn btn-primary btn-block" [disabled]="!formLogin.valid" type="submit">{{ 'LOGIN.SUBMIT' | translate }}</button>
+				</div>
+			</form>
+			<div class="login-forgot-password">
+				<button class="btn btn-link" (click)="resetPassword()" id="rest-password-link">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</button>
+			</div>
+		</div>
+	</div>
+</div>

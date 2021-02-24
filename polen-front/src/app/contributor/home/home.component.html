@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<div id="contributor-home-container" class="polen-container bg">
+    <div class="container polen-sub-container">
+        <div class="row">
+            <div class="container">
+                <div class="float-left">
+                    <h3 id="home-title">{{ 'CONTRIBUTOR.HOME.TITLE' | translate }}</h3>
+                </div>
+                <div class="float-right">
+                    <button id="new-sheet-button" class="btn btn-primary" (click)="add()">{{ 'CONTRIBUTOR.HOME.CREATE_EVENT_BUTTON' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div id="loader" class="container" *ngIf="loading">
+          <div class="spinner-preloader position-relative">
+            <div id="loader-message" class="spinner-subtitle position-relative">{{ 'ADMIN.LOADING' | translate }}</div>
+            <div id="loader-icon" class="spinner-loader position-relative mt-3"></div>
+          </div>
+        </div>
+        <div *ngIf="!loading">
+          <div class="container" *ngIf="totalBakeries < 1">
+            <div class="row polen-sub-container align-items-center no-results-block">
+              <div class="w-100">
+                <div class="w-100">
+                  <span id="no-results-image" class="fas fa-ban"></span>
+                </div>
+                <div id="no-results-message" class="w-100 contributor-not-found">{{ 'contributor.HOME.EVENT_NOT_FOUND' | translate }}</div>
+                <div id="no-results-try-again-message" class="container contributor-not-found-try-again">{{ 'contributor.HOME.EVENT_NOT_FOUND_TRY_AGAIN' | translate }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive" *ngIf="totalBakeries > 0">
+            <table id="contributors-table" class="table table-hover">
+              <thead class="thead-light">
+              <tr>
+                <th id="contributors-table-name">{{ 'CONTRIBUTOR.HOME.RESULTS.DATE' | translate }}</th>
+                <th id="contributors-table-address">{{ 'CONTRIBUTOR.HOME.RESULTS.ORGANIZER' | translate }}</th>
+                <th id="contributors-table-phone">{{ 'CONTRIBUTOR.HOME.RESULTS.STUDENTS' | translate }}</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let event of events">
+                  <td
+                  class="font-weight-bold" [id]="event.id + '-contributor-person'">{{ event.date }}</td>
+                  <td>{{ event.organizer }}</td>
+                  <td><span *ngFor="let student of event.students">- {{ student }}<br/></span></td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-info" id="edit-user-button" (click)="delete(event)">
+                      <em class="fa fa-trash-alt"></em>
+                    </button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="mb-4">
+            <ngb-pagination id="contributors-pagination" class="d-flex justify-content-end" [(page)]="page" [pageSize]="pageSize"
+                            [collectionSize]="totalBakeries" (pageChange)="search()">
+                <ng-template ngbPaginationPrevious><em id="contributors-previous-page-icon" class="fa fa-angle-left"></em></ng-template>
+                <ng-template ngbPaginationNext><em id="contributors-next-page-icon" class="fa fa-angle-right"></em></ng-template>
+            </ngb-pagination>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+</div>

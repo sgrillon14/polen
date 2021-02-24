@@ -1,0 +1,6 @@
+{
+  "name": "polen-postEvent",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}

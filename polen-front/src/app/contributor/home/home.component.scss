@@ -1,0 +1,21 @@
+@import '../../../variables.scss';
+
+.no-results-block {
+    height: calc(100vh - 340px);
+    min-height: 240px;
+}
+
+.event-not-found {
+    color: $secondary;
+    font-size: 32px
+}
+
+.event-not-found-try-again {
+    color: #8091a5;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+}
+
+.error-message-align-end {
+    margin-top: -5px;
+}

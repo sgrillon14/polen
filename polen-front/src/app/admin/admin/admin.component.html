@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<div id="administration-container" class="polen-container bg">
+  <div class="container polen-sub-container">
+    <ngb-alert id="creation-edition-error-message" *ngIf='errDisplay' [dismissible]="true" type="danger" (close)="closeAlert()">
+      <span id="404-message" *ngIf='notFoundDisplay'>{{ 'API.404' | translate}}</span>
+      <span id="usernameExistsException-message" *ngIf='usernameExistsExceptionDisplay'>{{ 'AWS.COGNITO.USER_ALREADY_EXISTS' | translate}}</span>
+      <span id="integrity-message" *ngIf='integrityDisplay'>{{ 'ADMIN.USER.ERROR.CREATION_INTEGRITY_ERROR' | translate}}</span>
+      <span id="unknownError-message" *ngIf='unknownError'>{{ 'ADMIN.USER.ERROR.UNKNOWN_ERROR' | translate}}</span>
+    </ngb-alert>
+    <ngb-alert id="creation-edition-info-message" *ngIf='infoDisplay' [dismissible]="true" type="success" (close)="closeInfo()">
+      <span>{{ 'AWS.COGNITO.TEMPORARY_PASSWORD_HAS_BEEN_RETURNED_TO_THE_USER' | translate}}</span>
+    </ngb-alert>
+    <h3>{{ 'ADMIN.USER.TITLE' | translate }}</h3>
+    <div id="loader" class="container" *ngIf="loading">
+      <div class="spinner-preloader position-relative">
+        <div id="loader-message" class="spinner-subtitle position-relative">{{ 'ADMIN.LOADING' | translate }}</div>
+        <div id="loader-icon" class="spinner-loader position-relative mt-3"></div>
+      </div>
+    </div>
+    <div *ngIf="!loading">
+      <table id="users-table" class="table table-hover">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">{{ 'ADMIN.USER.LOGIN' | translate }}</th>
+          <th scope="col">{{ 'ADMIN.USER.NAME' | translate }} / {{ 'ADMIN.USER.FIRSTNAME' | translate }}</th>
+          <th scope="col">{{ 'ADMIN.USER.EMAIL' | translate }}</th>
+          <th scope="col">{{ 'ADMIN.USER.ENABLED' | translate }}</th>
+          <th scope="col">{{ 'ADMIN.USER.STATUS' | translate }}</th>
+          <th scope="col">{{ 'ADMIN.USER.ROLE' | translate }}</th>
+          <th scope="col"></th>
+          <th scope="col" class="text-center text-primary">
+            <button class="btn btn-sm btn-info" id="add-user-button" (click)="add()">
+              <em class="fa fa-user-plus"></em>
+            </button>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.name }} {{ user.firstname }}</td>
+          <td>{{ user.email }}</td>
+          <td class="text-center">
+            <em *ngIf='user.enabled' id="enabled" class="fa fa-check text-success"></em>
+            <em *ngIf='!user.enabled' id="disabled" class="fa fa-times text-danger"></em>
+          </td>
+          <td>{{ 'ADMIN.USER.STATUSES.' + user.status | translate }}</td>
+          <td>
+            <ng-container *ngFor='let role of user.roles'>
+              <span
+                [ngClass]="(role === 'ADMIN') ? 'badge badge-danger' : 'badge badge-success'">{{ 'ADMIN.USER.ROLES.' + role | translate }}</span>
+              <br/>
+            </ng-container>
+          </td>
+          <td class="text-center">
+            <button *ngIf="user.status==='FORCE_CHANGE_PASSWORD'" class="btn btn-sm btn-outline-info" id="edit-user-button" (click)="resendTemporaryPassword(user.username)">
+              <em class="fa fa-key"></em>
+            </button>
+          </td>
+          <td class="text-center">
+            <button *ngIf="!user.roles.includes('IMPORTER')" class="btn btn-sm btn-outline-info" id="edit-user-button" (click)="edit(user)">
+              <em class="fa fa-edit"></em>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
