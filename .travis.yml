@@ -26,3 +26,4 @@ script:
   - curl -s http://localhost:4200
   - npm run build
   - ngh --dir=dist/polen --message="deploy by Travis-ci" --repo=https://$GITHUB_TOKEN@github.com/sgrillon14/polen.io.git --branch=master
+ 
