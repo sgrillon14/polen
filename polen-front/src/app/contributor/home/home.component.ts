@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
     const modalEvent = this.modalService.open(EventFormComponent);
     modalEvent.componentInstance.formEvent = formEvent;
     modalEvent.result.then((eventF) => {
-      let event = new Event();
+      const event = new Event();
       event.date = eventF.date;
       event.organizer = eventF.organizer;
       event.students = new Array<string>(eventF.numberOfPlaces).fill('');
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  delete(event: Event){
+  delete(event: Event) {
     this.loading = true;
     this.eventService.deleteEvent(event.id).subscribe(() => this.search(),
       (error) => {

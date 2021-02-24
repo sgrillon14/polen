@@ -45,15 +45,15 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  addCounter(students: string[]){
-    return students.filter(function (student) {
-      return student === "";
+  addCounter(students: string[]) {
+    return students.filter((student) => {
+      return student === '';
     });
   }
 
   filterStudents(students: string[]) {
-    return students.filter(function (student) {
-      return student != "" && student != null;
+    return students.filter((student) => {
+      return student !== '' && student != null;
     });
   }
 
@@ -64,10 +64,10 @@ export class HomeComponent implements OnInit {
     const modalEvent = this.modalService.open(RegisterFormComponent);
     modalEvent.componentInstance.formUser = formUser;
     modalEvent.result.then((f) => {
-      let students = event.students;
-      students.splice(-1,1)
+      const students = event.students;
+      students.splice(-1, 1);
       students.unshift(f.student);
-      event.students = students
+      event.students = students;
       this.updateEvent(event);
     }, () => {
     });

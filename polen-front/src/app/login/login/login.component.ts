@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.loginService.logout();
+    // this.loginService.logout();
     this.appConfigService.getConfig().subscribe();
   }
 
