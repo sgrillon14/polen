@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot --disable-host-check",
-    "build": "ng build --prod --base-href https:/sgrillon14.github.io/polen.io/",
+    "build": "ng build --prod --base-href https://sgrillon14.github.io/polen.io/",
     "test": "ng test",
     "test:local": "ng test --browsers=ChromeNoSandbox",
     "test:ci": "ng test --browsers=ChromeHeadlessNoSandbox --watch=false --code-coverage=true",
