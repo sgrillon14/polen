@@ -34,6 +34,8 @@
               <tr>
                 <th id="publics-table-name">{{ 'PUBLIC.HOME.DATE' | translate }}</th>
                 <th id="publics-table-address">{{ 'PUBLIC.HOME.ORGANIZER' | translate }}</th>
+                <th id="publics-table-address">{{ 'PUBLIC.HOME.STATE' | translate }}</th>
+                <th id="publics-table-address">{{ 'PUBLIC.HOME.ACTIVITY' | translate }}</th>
                 <th id="publics-table-phone">{{ 'PUBLIC.HOME.STUDENTS' | translate }}</th>
               </tr>
               </thead>
@@ -42,6 +44,8 @@
                   <td
                   class="font-weight-bold" [id]="event.id + '-public-person'">{{ event.date }}</td>
                   <td>{{ event.organizer }}</td>
+                  <td>{{ event.state }}</td>
+                  <td>{{ event.activity }}</td>
                   <td><span *ngFor="let student of filterStudents(event.students)">- {{ student }}<br/></span><span *ngFor="let item of addCounter(event.students)"><button (click)="add(event)" class="btn btn-sm btn-info">
                     <em class="fa fa-user-plus"></em>   s'inscrire</button><br/></span></td>
               </tr>

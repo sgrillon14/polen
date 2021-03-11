@@ -93,13 +93,17 @@
       "EVENT_NOT_FOUND_TRY_AGAIN": "Essayez de nouveau avec d'autres critères de recherche.",
       "RESULTS": {
         "DATE": "Date",
-        "ORGANIZER": "Oraganisateur",
+        "ORGANIZER": "Organisateur",
+        "STATE": "Lieu",
+        "ACTIVITY": "Activité prévue",
         "STUDENTS": "Eleves"
       }
     },
     "EVENT":{
       "DATE": "Date",
-      "ORGANIZER": "Oraganisateur",
+      "ORGANIZER": "Organisateur",
+      "STATE": "Lieu",
+      "ACTIVITY": "Activité prévue",
       "PLACES": "Nombre de place",
       "EVENT_FORM": {
         "TITLE": "Création d'un évenement",
@@ -113,7 +117,9 @@
     "HOME": {
       "TITLE": "Voici la liste des prochaines session",
       "DATE": "Date",
-      "ORGANIZER": "Oraganisateur",
+      "ORGANIZER": "Organisateur",
+      "STATE": "Lieu",
+      "ACTIVITY": "Activité prévue",
       "STUDENTS": "Participants",
       "ADMIN": "Accès pour les organisateurs"
     },

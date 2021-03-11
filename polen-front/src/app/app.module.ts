@@ -5,7 +5,8 @@ import { CoreModule } from './core/core.module';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { GlobalErrorHandler } from './core/global-error-handler/global-error-handler.service';
-import { HomeComponent } from './public/home/home.component';
+import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { MomentDateFormatter } from './core/utils/moment-date-formatter';
 
 registerLocaleData(localeFr);
 
@@ -17,9 +18,9 @@ registerLocaleData(localeFr);
     CoreModule,
     AppRoutingModule
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'fr' }, {
-    provide: ErrorHandler, useClass: GlobalErrorHandler
-  } ],
+  providers: [ { provide: LOCALE_ID, useValue: 'fr' },
+               { provide: NgbDateParserFormatter, useValue: new MomentDateFormatter() },
+               { provide: ErrorHandler, useClass: GlobalErrorHandler } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

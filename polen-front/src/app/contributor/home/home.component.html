@@ -35,6 +35,8 @@
               <tr>
                 <th id="contributors-table-name">{{ 'CONTRIBUTOR.HOME.RESULTS.DATE' | translate }}</th>
                 <th id="contributors-table-address">{{ 'CONTRIBUTOR.HOME.RESULTS.ORGANIZER' | translate }}</th>
+                <th id="contributors-table-address">{{ 'CONTRIBUTOR.HOME.RESULTS.STATE' | translate }}</th>
+                <th id="contributors-table-address">{{ 'CONTRIBUTOR.HOME.RESULTS.ACTIVITY' | translate }}</th>
                 <th id="contributors-table-phone">{{ 'CONTRIBUTOR.HOME.RESULTS.STUDENTS' | translate }}</th>
                 <th scope="col"></th>
               </tr>
@@ -44,6 +46,8 @@
                   <td
                   class="font-weight-bold" [id]="event.id + '-contributor-person'">{{ event.date }}</td>
                   <td>{{ event.organizer }}</td>
+                  <td>{{ event.state }}</td>
+                  <td>{{ event.activity }}</td>
                   <td><span *ngFor="let student of event.students">- {{ student }}<br/></span></td>
                   <td class="text-center">
                     <button class="btn btn-sm btn-outline-info" id="edit-user-button" (click)="delete(event)">

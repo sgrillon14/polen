@@ -60,6 +60,8 @@ export class HomeComponent implements OnInit {
     const formEvent = this.formBuilder.group({
       date: '',
       organizer: '',
+      state: '',
+      activity: '',
       numberOfPlaces: 5
     });
     const modalEvent = this.modalService.open(EventFormComponent);
@@ -68,6 +70,8 @@ export class HomeComponent implements OnInit {
       const event = new Event();
       event.date = eventF.date;
       event.organizer = eventF.organizer;
+      event.state = eventF.state;
+      event.activity = eventF.activity;
       event.students = new Array<string>(eventF.numberOfPlaces).fill('');
       this.createEvent(event);
     }, () => {
